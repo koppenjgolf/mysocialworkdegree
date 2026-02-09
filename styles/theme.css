@@ -1,0 +1,28 @@
+:root{
+  --bg: 255 255 255;
+  --fg: 17 24 39;
+  --muted: 107 114 128;
+  --surface: 248 250 252;
+  --border: 226 232 240;
+
+  --primary: 14 165 233;
+  --primary-2: 16 185 129;
+  --accent: 99 102 241;
+  --warning: 245 158 11;
+
+  --radius: 18px;
+  --shadow: 0 12px 30px rgba(2, 6, 23, 0.10);
+  --shadow-sm: 0 6px 14px rgba(2, 6, 23, 0.10);
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: 2 6 23;
+    --fg: 226 232 240;
+    --muted: 148 163 184;
+    --surface: 15 23 42;
+    --border: 51 65 85;
+    --shadow: 0 16px 40px rgba(0,0,0,0.45);
+    --shadow-sm: 0 8px 18px rgba(0,0,0,0.40);
+  }
+}
