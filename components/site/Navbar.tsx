@@ -1,30 +1,19 @@
 import Link from "next/link";
-import { Button } from "../ui/Button";
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-bg/80 backdrop-blur">
-      <div className="container-page flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-extrabold tracking-tight">
-          <span className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-primary2" />
-          <span>My Social Work Degree</span>
+    <header style={{ borderBottom: "1px solid rgba(0,0,0,.08)", background: "white" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "14px 16px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <Link href="/" style={{ fontWeight: 800, textDecoration: "none", color: "black" }}>
+          My Social Work Degree
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm font-semibold text-muted md:flex">
-          <Link className="hover:text-fg" href="/programs">Programs</Link>
-          <Link className="hover:text-fg" href="/degrees">Degrees</Link>
-          <Link className="hover:text-fg" href="/careers">Careers</Link>
-          <Link className="hover:text-fg" href="/states">By State</Link>
+        <nav style={{ display: "flex", gap: 18, fontSize: 14 }}>
+          <Link href="/programs" style={{ textDecoration: "none", color: "black" }}>Programs</Link>
+          <Link href="/degrees" style={{ textDecoration: "none", color: "black" }}>Degrees</Link>
+          <Link href="/careers" style={{ textDecoration: "none", color: "black" }}>Careers</Link>
+          <Link href="/states" style={{ textDecoration: "none", color: "black" }}>By State</Link>
         </nav>
-
-        <div className="flex items-center gap-2">
-          <Button variant="secondary" className="hidden sm:inline-flex">
-            Compare options
-          </Button>
-          <Button>
-            Get matched
-          </Button>
-        </div>
       </div>
     </header>
   );

@@ -1,35 +1,11 @@
-# Social Work Degrees Lead-Gen Site (Next.js)
+App Router complete patch (fixes missing Navbar/Footer module errors)
 
-This is a production-ready starter for a lead generation site for social work degrees.
+IMPORTANT:
+- Copy the folders from this zip into the ROOT of your repo.
+- Do NOT keep a parent folder like `app-router-folder/` in your repo.
+  You should end up with: `app/`, `components/`, `styles/`, `public/` at the repo root.
 
-## Quick start
-1) Install deps:
-```bash
-npm i
-```
-
-2) Create `.env.local`:
-```bash
-cp .env.example .env.local
-```
-
-3) Run:
-```bash
-npm run dev
-```
-
-## Deploy (Vercel)
-- Push to GitHub
-- Import into Vercel
-- Add environment variables from `.env.example`
-- Set your domain and enable HTTPS
-
-## Lead capture options
-- Supabase (recommended): store leads + export/reporting
-- Webhook (Zapier/Make/HubSpot): send leads straight to your CRM
-- Resend: email notifications to your team
-
-See `/app/api/lead/route.ts`.
-
-## Legal pages
-Update `app/(legal)/privacy/page.tsx` and `app/(legal)/terms/page.tsx` with your business info.
+What this includes:
+- app/layout.tsx, app/page.tsx, app/programs/page.tsx
+- components/site/Navbar.tsx, components/site/Footer.tsx
+- styles/globals.css

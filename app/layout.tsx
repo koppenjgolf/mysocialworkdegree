@@ -1,14 +1,9 @@
 import "../styles/globals.css";
-import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { Navbar } from "../components/site/Navbar";
 import { Footer } from "../components/site/Footer";
 
-export const metadata: Metadata = {
-  title: "My Social Work Degree",
-  description: "Student-focused guides to social work degree pathways and program formats.",
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>

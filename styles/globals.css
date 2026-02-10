@@ -2,29 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./theme.css";
-
 html, body { height: 100%; }
-
-body{
-  background: rgb(var(--bg));
-  color: rgb(var(--fg));
-}
-
-::selection{ background: rgba(var(--primary), .20); }
-
-@layer components{
-  .container-page{ @apply mx-auto w-full max-w-6xl px-4; }
-  .card-surface{
-    background: rgb(var(--surface));
-    border: 1px solid rgb(var(--border));
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-  }
-  .chip{
-    @apply inline-flex items-center rounded-full px-3 py-1 text-sm;
-    background: rgba(var(--accent), .10);
-    color: rgb(var(--fg));
-    border: 1px solid rgba(var(--accent), .25);
-  }
-}
+body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
