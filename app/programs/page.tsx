@@ -1,25 +1,36 @@
-export default function Programs() {
-  return (
-    <main style={{ maxWidth: 1100, margin: "0 auto", padding: "28px 16px" }}>
-      <h1 style={{ fontSize: 36, margin: "0 0 10px 0" }}>Programs</h1>
-      <p style={{ fontSize: 16, lineHeight: 1.6, color: "rgba(0,0,0,.75)", maxWidth: 820 }}>
-        Explore social work degree pathways, program formats, and career preparation options to help you make an informed education decision.
-      </p>
+import { Container, Card, Badge, Button } from "@/components/ui";
+import { programs } from "@/content/programs";
 
-      <div style={{ display: "grid", gap: 14, marginTop: 18 }}>
-        <div style={{ border: "1px solid rgba(0,0,0,.10)", borderRadius: 14, padding: 16 }}>
-          <div style={{ fontWeight: 800 }}>BSW programs</div>
-          <div style={{ marginTop: 6, color: "rgba(0,0,0,.72)" }}>Undergraduate preparation for entry-level practice and potential advanced standing.</div>
+export const metadata = { title: "Social Work Programs: BSW, MSW, DSW, PhD" };
+
+export default function ProgramsPage() {
+  return (
+    <main className="bg-white">
+      <Container>
+        <div className="py-12">
+          <h1 className="text-3xl font-extrabold tracking-tight">Programs</h1>
+          <p className="mt-3 text-slate-600">
+            Browse common social work degree pathways. Each page is optimized as an SEO landing page and funnels into the match form.
+          </p>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {programs.map((p) => (
+              <Card key={p.slug} className="p-6">
+                <div className="flex flex-wrap items-center gap-2">
+                  <Badge>{p.level}</Badge>
+                  <Badge>{p.modality}</Badge>
+                </div>
+                <div className="mt-3 text-xl font-extrabold">{p.title}</div>
+                <div className="mt-2 text-sm text-slate-600">Typical length: {p.typicalLength}</div>
+                <div className="mt-5 flex gap-3">
+                  <Button href={`/programs/${p.slug}`} variant="secondary">View</Button>
+                  <Button href={`/apply/form/form?level=${p.level}&modality=${p.modality}`} variant="primary">Get matches</Button>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
-        <div style={{ border: "1px solid rgba(0,0,0,.10)", borderRadius: 14, padding: 16 }}>
-          <div style={{ fontWeight: 800 }}>MSW programs</div>
-          <div style={{ marginTop: 6, color: "rgba(0,0,0,.72)" }}>Graduate training for advanced practice, leadership, and common licensure pathways.</div>
-        </div>
-        <div style={{ border: "1px solid rgba(0,0,0,.10)", borderRadius: 14, padding: 16 }}>
-          <div style={{ fontWeight: 800 }}>Online and hybrid formats</div>
-          <div style={{ marginTop: 6, color: "rgba(0,0,0,.72)" }}>Flexible learning while completing required field education.</div>
-        </div>
-      </div>
+      </Container>
     </main>
   );
 }

@@ -1,68 +1,37 @@
-/**
- * Canonical blog data module.
- * Matches fields referenced in app/blog/[slug]/page.tsx:
- *   - date
- *   - readTime
- *   - excerpt
- */
-
 export type BlogPost = {
   slug: string;
   title: string;
-  /** Short summary for cards/listings */
   excerpt: string;
-  /** Optional longer description */
-  description?: string;
-  /** ISO date string */
-  date: string;
-  /** e.g. "6 min read" */
+  date: string; // ISO
   readTime: string;
-  tags?: string[];
-  /** Optional long-form content used in templates */
-  content?: string;
+  content: string[]; // paragraphs
 };
 
-export const BLOG_POSTS: BlogPost[] = [
+export const blogPosts: BlogPost[] = [
   {
-    slug: "how-to-choose-an-online-msw-program",
+    slug: "msw-vs-bsw",
+    title: "MSW vs BSW: Which Social Work Degree Should You Choose?",
+    excerpt: "A practical comparison of career outcomes, timelines, and common admissions paths.",
+    date: "2026-01-01",
+    readTime: "6 min",
+    content: [
+      "If you're deciding between a BSW and MSW, start with your career goal and timeline.",
+      "A BSW is typically the entry point for many social services roles and can set you up for advanced standing in an MSW.",
+      "An MSW opens more clinical and leadership roles, depending on your state’s licensing requirements.",
+      "When comparing programs, ask about field placements, tuition, and whether the curriculum aligns with licensure pathways.",
+    ],
+  },
+  {
+    slug: "how-to-choose-online-msw",
     title: "How to Choose an Online MSW Program",
-    excerpt:
-      "Use this checklist to compare accreditation, field placements, total cost, timelines, and student support services.",
-    description:
-      "A student-friendly checklist for comparing programs, including accreditation, field education, cost, and support services.",
-    date: "2026-02-09",
-    readTime: "6 min read",
-    tags: ["MSW", "Online programs", "Choosing a program"],
-    content:
-      "Start with accreditation and field placement support. Compare timelines and total cost, then ask each program how placements are coordinated in your area.",
-  },
-  {
-    slug: "what-is-field-education-in-social-work",
-    title: "What Is Field Education in Social Work?",
-    excerpt:
-      "Field education is supervised, hands-on training. Learn what to expect and what questions to ask about placement support.",
-    description:
-      "Learn how field education works, what to expect, and questions to ask when evaluating program placement support.",
-    date: "2026-02-09",
-    readTime: "5 min read",
-    tags: ["Field education", "Social work"],
-    content:
-      "Field education is the supervised, hands-on training component of social work programs. Ask how placements are arranged and how hours are tracked.",
-  },
-  {
-    slug: "bsw-vs-msw-whats-the-difference",
-    title: "BSW vs. MSW: What’s the Difference?",
-    excerpt:
-      "Compare outcomes, timelines, and common reasons students choose a BSW, an MSW, or both pathways.",
-    description:
-      "A clear overview of typical outcomes, timelines, and common reasons students choose each pathway.",
-    date: "2026-02-09",
-    readTime: "4 min read",
-    tags: ["BSW", "MSW", "Degree pathways"],
-    content:
-      "A BSW is often an undergraduate entry path and may qualify for advanced standing. An MSW is the common graduate pathway for advanced practice and many licensure routes.",
+    excerpt: "What to look for in accreditation, field placements, schedule flexibility, and student support.",
+    date: "2026-01-10",
+    readTime: "7 min",
+    content: [
+      "Online MSW programs can be a great fit for working adults, but not all are created equal.",
+      "Prioritize CSWE accreditation, field placement support in your area, and transparent tuition/fees.",
+      "Ask whether the program offers synchronous vs asynchronous options and what the weekly workload looks like.",
+      "Finally, confirm licensure alignment for your state and intended practice area.",
+    ],
   },
 ];
-
-export const blogPosts = BLOG_POSTS;
-export default blogPosts;

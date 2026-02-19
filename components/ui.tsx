@@ -3,7 +3,17 @@ import { clsx } from "clsx";
 import type { ReactNode } from "react";
 import type * as React from "react";
 
-export function Container({ children }: { children: ReactNode }) {
+export function Container({
+  children,
+  className = "",
+  ...props
+}: React.HTMLAttributes<HTMLDivElement> & { children: React.ReactNode }) {
+  return (
+    <div className={`mx-auto w-full max-w-6xl px-4 md:px-6 ${className}`} {...props}>
+      {children}
+    </div>
+  );
+}: { children: ReactNode }) {
   return <div className="mx-auto w-full max-w-6xl px-4">{children}</div>;
 }
 

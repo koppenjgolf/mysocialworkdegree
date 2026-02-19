@@ -1,18 +1,59 @@
-export type ProgramItem = {
+export type Program = {
   slug: string;
   title: string;
-  description: string;
-  category: "BSW" | "MSW" | "Format" | "General";
-  updatedAt?: string;
+  level: "BSW" | "MSW" | "DSW" | "PhD";
+  modality: "Online" | "Campus" | "Hybrid";
+  typicalLength: string;
+  highlights: string[];
 };
 
-export const PROGRAMS: ProgramItem[] = [
-  { slug: "bsw-programs", title: "BSW Programs", description: "Undergraduate preparation for entry-level practice and potential advanced standing in some MSW programs.", category: "BSW", updatedAt: "2026-02-09" },
-  { slug: "msw-programs", title: "MSW Programs", description: "Graduate pathway for advanced practice and leadership roles. Many students pursue an MSW for common clinical licensure pathways.", category: "MSW", updatedAt: "2026-02-09" },
-  { slug: "online-msw-programs", title: "Online MSW Programs", description: "Flexible learning formats while completing required field education.", category: "Format", updatedAt: "2026-02-09" },
-  { slug: "hybrid-msw-programs", title: "Hybrid MSW Programs", description: "Blended formats combining online coursework with in-person learning experiences.", category: "Format", updatedAt: "2026-02-09" },
-  { slug: "on-campus-msw-programs", title: "On-Campus MSW Programs", description: "In-person instruction and local placement networks in many regions.", category: "Format", updatedAt: "2026-02-09" },
+export const programs: Program[] = [
+  {
+    slug: "msw-online",
+    title: "Online MSW Programs",
+    level: "MSW",
+    modality: "Online",
+    typicalLength: "12–24 months",
+    highlights: [
+      "Flexible schedules for working adults",
+      "Field placements coordinated locally",
+      "Advanced standing options (for BSW grads)",
+    ],
+  },
+  {
+    slug: "bsw",
+    title: "Bachelor’s in Social Work (BSW)",
+    level: "BSW",
+    modality: "Campus",
+    typicalLength: "3–4 years",
+    highlights: [
+      "Foundation for entry-level social services roles",
+      "Preparation for MSW advanced standing",
+      "Hands-on practicum experience",
+    ],
+  },
+  {
+    slug: "dsw",
+    title: "Doctor of Social Work (DSW)",
+    level: "DSW",
+    modality: "Hybrid",
+    typicalLength: "2–3 years",
+    highlights: [
+      "Practice-focused doctoral pathway",
+      "Leadership and applied research emphasis",
+      "Ideal for senior clinical/administrative roles",
+    ],
+  },
+  {
+    slug: "phd",
+    title: "PhD in Social Work",
+    level: "PhD",
+    modality: "Campus",
+    typicalLength: "3–6 years",
+    highlights: [
+      "Research-intensive training",
+      "Academic and policy career pathways",
+      "Dissertation + publication focus",
+    ],
+  },
 ];
-
-export const programs = PROGRAMS;
-export default programs;
